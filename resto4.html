@@ -8,46 +8,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <style>
+<style>
         /* Filter section */
         .filter-section {
             margin: 20px;
             padding: 20px;
-            border: 1px solid #ababab;
+            border: 1px solid #ccc;
             border-radius: 10px;
-            background-color: #ddfbf5;
+            background-color: #f4f9fc;
             width: 320px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             position: relative;
             float: left;
             top: 0;
         }
-    
+
         .filter-section h2 {
             font-family: 'Arial', sans-serif;
             font-size: 1.6em;
-            color: #333;
+            color: #004680;
             margin-bottom: 15px;
             text-align: center;
         }
-    
+
         .filter-section label {
             font-family: 'Arial', sans-serif;
             font-size: 1.1em;
-            color: #555;
+            color: #005a9e;
             margin-top: 10px;
             display: block;
         }
-    
+
         .filter-section input[type="range"] {
             width: 100%;
             margin: 10px 0;
         }
-    
+
         .filter-section button {
             width: 100%;
             padding: 10px;
-            background-color: #007BFF;
+            background-color: #005a9e;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -55,17 +55,17 @@
             font-size: 1.1em;
             transition: background-color 0.3s ease;
         }
-    
+
         .filter-section button:hover {
-            background-color: #0056b3;
+            background-color: #003f6e;
         }
-    
+
         /* Results section */
         .results {
             margin-left: 350px; /* Adjust based on filter sidebar width */
             padding: 20px;
         }
-    
+
         .shop {
             display: flex;
             align-items: center;
@@ -77,13 +77,13 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s, box-shadow 0.2s;
         }
-    
+
         .shop:hover {
             transform: scale(1.02);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             background-color: #c8dcf2;
         }
-    
+
         .shop img {
             border-radius: 8px;
             width: 90%;
@@ -92,11 +92,11 @@
             object-fit: cover; /* Ensure the image fills the area properly without distortion */
             margin-right: 15px;
         }
-    
+
         .shop-content {
             flex: 1;
         }
-    
+
         .shop-name {
             font-size: 1.5em;
             font-weight: bold;
@@ -105,17 +105,17 @@
             display: block;
             margin-bottom: 10px;
         }
-    
+
         .shop-name:hover {
             text-decoration: none;
         }
-    
+
         .shop p {
             margin: 5px 0;
             font-size: 1em;
             color: #373737;
         }
-    
+
         .rating {
             font-size: 1.5em;
             color: #f39c12; /* Golden/yellow color for stars */
@@ -126,7 +126,6 @@
             color: #f39c12; /* Golden/yellow color for the stars */
         }
 
-    
         /* Media queries for responsiveness */
         @media screen and (max-width: 1024px) {
             .filter-section {
@@ -135,65 +134,65 @@
                 float: none;
                 position: relative;
             }
-    
+
             .results {
                 margin-left: 0;
                 padding: 10px;
             }
         }
-    
+
         @media screen and (max-width: 768px) {
             .filter-section {
                 width: 100%;
                 padding: 10px;
                 margin-bottom: 20px;
             }
-    
+
             .results {
                 margin-left: 0;
                 padding: 10px;
             }
-    
+
             .shop img {
                 width: 120px;
                 height: 90px;
             }
-    
+
             .shop-name {
                 font-size: 1.2em;
             }
-    
+
             .filter-section h2 {
                 font-size: 1.4em;
             }
         }
-    
+
         @media screen and (max-width: 480px) {
             .filter-section {
                 width: 100%;
                 padding: 5px;
                 margin-bottom: 15px;
             }
-    
+
             .shop {
                 flex-direction: column;
                 text-align: center;
             }
-    
+
             .shop img {
                 margin-bottom: 10px;
-                width:90%;
+                width: 90%;
                 height: 150px;
             }
-    
+
             .rating {
                 font-size: 1.2em;
             }
-    
+
             .shop-name {
                 font-size: 1.1em;
             }
-    
+
             .filter-section h2 {
                 font-size: 1.2em;
             }
@@ -201,11 +200,11 @@
             .filter-section label {
                 font-size: 1em;
             }
-    
+
             .filter-section button {
                 font-size: 1em;
             }
-    
+
             .results {
                 margin-left: 0;
             }
