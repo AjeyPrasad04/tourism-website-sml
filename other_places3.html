@@ -12,59 +12,60 @@
         .filter-section {
             margin: 20px;
             padding: 20px;
-            border: 1px solid #ababab;
+            border: 1px solid #a8c4c7;
             border-radius: 10px;
-            background-color: #fcf6d8;
+            background-color: #e8f4f8; /* Soft pastel blue */
             width: 320px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             position: relative;
             float: left;
             top: 0;
         }
-
+    
         .filter-section h2 {
             font-family: 'Arial', sans-serif;
             font-size: 1.6em;
-            color: #333;
+            color: #2b6777; /* Deep teal */
             margin-bottom: 15px;
             text-align: center;
         }
-
+    
         .filter-section label {
             font-family: 'Arial', sans-serif;
             font-size: 1.1em;
-            color: #555;
+            color: #5a7d82; /* Muted teal */
             margin-top: 10px;
             display: block;
         }
-
+    
         .filter-section input[type="range"] {
             width: 100%;
             margin: 10px 0;
         }
-
+    
         .filter-section button {
             width: 100%;
             padding: 10px;
-            background-color: #28a745;
+            background-color: #3a9c8b; /* Vibrant greenish-teal */
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 1.1em;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
-
+    
         .filter-section button:hover {
-            background-color: #218838;
+            background-color: #2e7b6e; /* Darker teal on hover */
+            transform: translateY(-2px); /* Slight elevation effect */
         }
-
+    
         /* Results section */
         .results {
             margin-left: 350px; /* Adjust based on filter sidebar width */
             padding: 20px;
         }
-
+    
         .site {
             display: flex;
             align-items: center;
@@ -76,13 +77,13 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s, box-shadow 0.2s;
         }
-
+    
         .site:hover {
             transform: scale(1.02);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            background-color: #f1e6b6;
+            background-color: #d6ecf3; /* Light background on hover */
         }
-
+    
         .site img {
             border-radius: 8px;
             width: 90%;
@@ -91,35 +92,35 @@
             object-fit: cover;
             margin-right: 15px;
         }
-
+    
         .site-content {
             flex: 1;
         }
-
+    
         .site-name {
             font-size: 1.5em;
             font-weight: bold;
-            color: #c58228;
+            color: #2b6777; /* Deep teal */
             text-decoration: none;
             display: block;
             margin-bottom: 10px;
         }
-
+    
         .site-name:hover {
             text-decoration: none;
         }
-
+    
         .site p {
             margin: 5px 0;
             font-size: 1em;
             color: #373737;
         }
-
+    
         .rating {
             font-size: 1.5em;
-            color: #f39c12;
+            color: #f39c12; /* Golden/yellow color for stars */
         }
-
+    
         /* Media queries for responsiveness */
         @media screen and (max-width: 1024px) {
             .filter-section {
@@ -128,77 +129,77 @@
                 float: none;
                 position: relative;
             }
-
+    
             .results {
                 margin-left: 0;
                 padding: 10px;
             }
         }
-
+    
         @media screen and (max-width: 768px) {
             .filter-section {
                 width: 100%;
                 padding: 10px;
                 margin-bottom: 20px;
             }
-
+    
             .results {
                 margin-left: 0;
                 padding: 10px;
             }
-
+    
             .site img {
                 width: 120px;
                 height: 90px;
             }
-
+    
             .site-name {
                 font-size: 1.2em;
             }
-
+    
             .filter-section h2 {
                 font-size: 1.4em;
             }
         }
-
+    
         @media screen and (max-width: 480px) {
             .filter-section {
                 width: 100%;
                 padding: 5px;
                 margin-bottom: 15px;
             }
-
+    
             .site {
                 flex-direction: column;
                 text-align: center;
             }
-
+    
             .site img {
                 margin-bottom: 10px;
                 width: 90%;
                 height: 150px;
             }
-
+    
             .rating {
                 font-size: 1.2em;
             }
-
+    
             .site-name {
                 font-size: 1.1em;
             }
-
+    
             .filter-section h2 {
                 font-size: 1.2em;
             }
-
+    
             .filter-section label {
                 font-size: 1em;
             }
-
+    
             .filter-section button {
                 font-size: 1em;
             }
-
+    
             .results {
                 margin-left: 0;
             }
@@ -223,7 +224,7 @@
 </div>
 
 <script>
-    const templeLocation = { lat: 10.7852, lng: 79.1312 }; 
+    const templeLocation = { lat: 10.7852, lng: 79.1312 }; // sml apparently
 
     function updateRadiusValue(value) {
         document.getElementById('radius-value').textContent = value;
@@ -256,50 +257,42 @@
     function displayResults(places, minRating) {
         const resultsContainer = document.getElementById('results');
         resultsContainer.innerHTML = ''; // Clear previous results
-    
-        const sampleImage = 'https://via.placeholder.com/150'; // Replace with a sample image
-    
+
+        const defaultImage = 'https://c8.alamy.com/comp/BY7RJ5/-BY7RJ5.jpg'; // Path to your default image
+
         places.forEach(place => {
             if (place.rating >= minRating) {
                 const shopDiv = document.createElement('div');
                 shopDiv.className = 'site';
-                const image = place.photos && place.photos[0] ? place.photos[0].getUrl() : sampleImage;
+                
+                // Use default image if place photo is not available
+                const imageUrl = place.photos && place.photos[0] ? place.photos[0].getUrl() : defaultImage;
                 const query = `${place.name} ${place.vicinity}`;
                 const link = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+                
                 shopDiv.innerHTML = `
-                    <img src="${image}" alt="${place.name}">
+                    <img src="${imageUrl}" alt="${place.name}">
                     <div class="site-content">
                         <a href="${link}" class="site-name" target="_blank">${place.name}</a>
                         <p><span class="rating">${generateStars(place.rating)}</span> ${place.rating}</p>
                     </div>
                 `;
+                
                 resultsContainer.appendChild(shopDiv);
             }
         });
     }
 
     function generateStars(rating) {
-        const fullStars = Math.floor(rating);
-        const halfStar = rating % 1 >= 0.5;
-        const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
-        let starsHtml = '<span class="rating">';
-
-        for (let i = 0; i < fullStars; i++) {
-            starsHtml += '<i class="fas fa-star"></i>';
-        }
-
-        if (halfStar) {
-            starsHtml += '<i class="fas fa-star-half-alt"></i>';
-        }
-
-        for (let i = 0; i < emptyStars; i++) {
-            starsHtml += '<i class="far fa-star"></i>';
-        }
-
-        starsHtml += '</span>';
-        return starsHtml;
+        const starFull = '<i class="fa fa-star"></i>';
+        const starHalf = '<i class="fa fa-star-half-alt"></i>';
+        const starEmpty = '<i class="fa fa-star-o"></i>';
+        
+        const stars = Math.floor(rating);
+        const hasHalf = rating % 1 !== 0;
+        
+        return starFull.repeat(stars) + (hasHalf ? starHalf : '') + starEmpty.repeat(5 - stars - (hasHalf ? 1 : 0));
     }
-    
     window.onload = function () {
         getNearbyPlaces(); // Call the function to fetch and display results
     };
